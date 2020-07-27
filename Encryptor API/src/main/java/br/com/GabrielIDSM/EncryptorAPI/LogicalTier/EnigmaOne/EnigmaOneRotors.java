@@ -1,40 +1,47 @@
-//Classe com os rotores
-package br.com.GabrielIDSM.EncryptorAPI.LogicalTier;
+package br.com.GabrielIDSM.EncryptorAPI.LogicalTier.EnigmaOne;
 
-public class Rotors {
-    //Atributos: constantes com os rotores
+public class EnigmaOneRotors {
+
     private final String R0 = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     private final String R1 = "EKMFLGDQVZNTOWYHXUSPAIBRCJ";
     private final String R2 = "AJDKSIRUXBLHWTMCQGZNPYFVOE";
     private final String R3 = "BDFHJLCPRTXVZNYEIWGAKMUSQO";
     private final String R4 = "ESOVPZJAYQUIRHXLNFTGKDCMWB";
     private final String R5 = "VZBRGITYUPSDNHLXAWMJQOFECK";
-    private final char[][] Ref = {{'Y', 'R'},{'U', 'H'},{'Q', 'S'},{'L', 'D'},{'P', 'X'},{'N', 'G'},{'O', 'K'},{'M', 'I'}, {'E', 'B'},{'F', 'Z'},{'C', 'W'},{'V', 'J'},{'A', 'T'}};
-    //Getters
-    private String getR0(){
+    private final String R6 = "JPGVOUMFYQBENHZRDKASXLICTW";
+    private final String R7 = "NZJHGRCXMYSWBOUFAIVLPEKQDT";
+    private final String R8 = "FKQHTLXOCBJSPDZRAMEWNIUYGV";
+    private final char[][] Ref = {{'Y', 'R'}, {'U', 'H'}, {'Q', 'S'}, {'L', 'D'}, {'P', 'X'}, {'N', 'G'}, {'O', 'K'}, {'M', 'I'}, {'E', 'B'}, {'F', 'Z'}, {'C', 'W'}, {'V', 'J'}, {'A', 'T'}};
+
+    private String getR0() {
         return R0;
     }
-    private String getR1(){
+
+    private String getR1() {
         return R1;
     }
-    private String getR2(){
+
+    private String getR2() {
         return R2;
     }
-    private String getR3(){
+
+    private String getR3() {
         return R3;
     }
-    private String getR4(){
+
+    private String getR4() {
         return R4;
     }
-    private String getR5(){
+
+    private String getR5() {
         return R5;
     }
-    private char[][] getRef(){
+
+    private char[][] getRef() {
         return Ref;
     }
-    //Setters não podem ser definidos pois são constantes
-    //Métodos IN
-    public String define_rotor_usado(int n){
+
+    public String DefineUsedRotor(int n) {
         String aux;
         switch (n) {
             case 0:
@@ -53,7 +60,7 @@ public class Rotors {
                 aux = getR4();
                 break;
             case 5:
-                aux = getR1();
+                aux = getR5();
                 break;
             default:
                 aux = null;
@@ -61,8 +68,9 @@ public class Rotors {
         }
         return aux;
     }
-    public char[][] define_refletor(){
-        return Ref;
+
+    public char[][] DefineReflector() {
+        return getRef();
     }
-    //Métodos FIM
+
 }
