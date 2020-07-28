@@ -98,10 +98,10 @@ public class EnigmaM4Rotors {
     public String DefineExtraRotor(int n) {
         String aux;
         switch (n) {
-            case 0:
+            case 1:
                 aux = getBETA();
                 break;
-            case 1:
+            case 2:
                 aux = getGAMA();
                 break;
             default:

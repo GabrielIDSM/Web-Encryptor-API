@@ -103,18 +103,15 @@ public class EnigmaM4OperationToFourRotors {
     }
 
     private char ReflectorSubstitution(char c, char[][] reflector) {
-        char aux = ' ';
         for (int i = 0; i < 13; i++) {
             if (reflector[i][0] == c) {
-                aux = reflector[i][1];
-                break;
+                return reflector[i][1];
             }
             if (reflector[i][1] == c) {
-                aux = reflector[i][0];
-                break;
+                return reflector[i][0];
             }
         }
-        return aux;
+        return '_';
     }
 
     private void RotateRotors() {

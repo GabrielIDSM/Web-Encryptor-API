@@ -1,0 +1,75 @@
+package br.com.GabrielIDSM.EncryptorAPI.Test;
+
+import br.com.GabrielIDSM.EncryptorAPI.LogicalTier.Encryptor;
+import br.com.GabrielIDSM.EncryptorAPI.Model.MessageRequestModelToEnigmaM3ArmyWithTenPlugs;
+import br.com.GabrielIDSM.EncryptorAPI.Model.MessageRequestModelToEnigmaM4WithPlugboardAndFourRotors;
+import br.com.GabrielIDSM.EncryptorAPI.Model.MessageResponseModel;
+
+public class EnigmaM3WithinEnigmaM4 {
+    public static void main(String[] args) {
+        MessageRequestModelToEnigmaM3ArmyWithTenPlugs messageRequest = new MessageRequestModelToEnigmaM3ArmyWithTenPlugs();
+        messageRequest.setMessage("Eu amo a Milena mais que prog");
+        messageRequest.setRotorOneWheelSet(1);
+        messageRequest.setRotorTwoWheelSet(10);
+        messageRequest.setRotorThreeWheelSet(20);
+        messageRequest.setRotorOne(1);
+        messageRequest.setRotorTwo(3);
+        messageRequest.setRotorThree(5);
+        messageRequest.setPlugOneA(0);
+        messageRequest.setPlugOneB(25);
+        messageRequest.setPlugTwoA(1);
+        messageRequest.setPlugTwoB(24);
+        messageRequest.setPlugThreeA(2);
+        messageRequest.setPlugThreeB(23);
+        messageRequest.setPlugFourA(3);
+        messageRequest.setPlugFourB(22);
+        messageRequest.setPlugFiveA(4);
+        messageRequest.setPlugFiveB(21);
+        messageRequest.setPlugSixA(5);
+        messageRequest.setPlugSixB(20);
+        messageRequest.setPlugSevenA(6);
+        messageRequest.setPlugSevenB(19);
+        messageRequest.setPlugEightA(7);
+        messageRequest.setPlugEightB(18);
+        messageRequest.setPlugNineA(8);
+        messageRequest.setPlugNineB(17);
+        messageRequest.setPlugTenA(9);
+        messageRequest.setPlugTenB(16);
+        MessageResponseModel messageResponse = Encryptor.EnigmaM3ArmyWithTenPlugsEncryptor(messageRequest);
+        System.out.println("Mensagem inicial: " +  messageRequest.getMessage());
+        System.out.println("Mensagem pós Encryptor: " +  messageResponse.getMessage());
+        MessageRequestModelToEnigmaM4WithPlugboardAndFourRotors messageRequestToEnigmaM4 = new MessageRequestModelToEnigmaM4WithPlugboardAndFourRotors();
+        messageRequestToEnigmaM4.setMessage(messageResponse.getMessage());
+        messageRequestToEnigmaM4.setReflector(4);
+        messageRequestToEnigmaM4.setRotorOneWheelSet(1);
+        messageRequestToEnigmaM4.setRotorTwoWheelSet(10);
+        messageRequestToEnigmaM4.setRotorThreeWheelSet(20);
+        messageRequestToEnigmaM4.setRotorFourWheelSet(1);
+        messageRequestToEnigmaM4.setRotorOne(1);
+        messageRequestToEnigmaM4.setRotorTwo(3);
+        messageRequestToEnigmaM4.setRotorThree(5);
+        messageRequestToEnigmaM4.setRotorFour(1);
+        messageRequestToEnigmaM4.setPlugOneA(0);
+        messageRequestToEnigmaM4.setPlugOneB(25);
+        messageRequestToEnigmaM4.setPlugTwoA(1);
+        messageRequestToEnigmaM4.setPlugTwoB(24);
+        messageRequestToEnigmaM4.setPlugThreeA(2);
+        messageRequestToEnigmaM4.setPlugThreeB(23);
+        messageRequestToEnigmaM4.setPlugFourA(3);
+        messageRequestToEnigmaM4.setPlugFourB(22);
+        messageRequestToEnigmaM4.setPlugFiveA(4);
+        messageRequestToEnigmaM4.setPlugFiveB(21);
+        messageRequestToEnigmaM4.setPlugSixA(5);
+        messageRequestToEnigmaM4.setPlugSixB(20);
+        messageRequestToEnigmaM4.setPlugSevenA(6);
+        messageRequestToEnigmaM4.setPlugSevenB(19);
+        messageRequestToEnigmaM4.setPlugEightA(7);
+        messageRequestToEnigmaM4.setPlugEightB(18);
+        messageRequestToEnigmaM4.setPlugNineA(8);
+        messageRequestToEnigmaM4.setPlugNineB(17);
+        messageRequestToEnigmaM4.setPlugTenA(9);
+        messageRequestToEnigmaM4.setPlugTenB(16);
+        MessageResponseModel messageResponseModelToEnigmaM4 = Encryptor.EnigmaM4WithPlugboardAndFourRotorsEncryptor(messageRequestToEnigmaM4);
+        System.out.println("Mensagem inicial pós Encryptor: " +  messageResponseModelToEnigmaM4.getMessage());
+    }
+}
