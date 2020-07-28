@@ -54,7 +54,7 @@ public class Encryptor {
         message = message.replace("\r", "");
         message = PrepareMessage.PrepareMessageToEncryptor(message);
         message = Plugboard.Operation(message, plugsIndexArray);
-        EnigmaOneOperation funcionamento = new EnigmaOneOperation(reflector, usedRotorOne, usedRotorTwo, usedRotorThree, message, messageRequest.getRotorTwo(), messageRequest.getRotorThree());
+        EnigmaOneOperation funcionamento = new EnigmaOneOperation(reflector, usedRotorOne, usedRotorTwo, usedRotorThree, message, messageRequest.getRotorTwoWheelSet(), messageRequest.getRotorThreeWheelSet());
         message = funcionamento.Operation();
         message = Plugboard.Operation(message, plugsIndexArray);
         messageResponse.setMessage(message);
@@ -107,7 +107,7 @@ public class Encryptor {
         message = message.replace("\r", "");
         message = PrepareMessage.PrepareMessageToEncryptor(message);
         message = Plugboard.Operation(message, plugsIndexArray);
-        EnigmaOneOperation funcionamento = new EnigmaOneOperation(reflector, usedRotorOne, usedRotorTwo, usedRotorThree, message, messageRequest.getRotorTwo(), messageRequest.getRotorThree());
+        EnigmaOneOperation funcionamento = new EnigmaOneOperation(reflector, usedRotorOne, usedRotorTwo, usedRotorThree, message, messageRequest.getRotorTwoWheelSet(), messageRequest.getRotorThreeWheelSet());
         message = funcionamento.Operation();
         message = Plugboard.Operation(message, plugsIndexArray);
         messageResponse.setMessage(message);
@@ -160,7 +160,7 @@ public class Encryptor {
         message = message.replace("\r", "");
         message = PrepareMessage.PrepareMessageToEncryptor(message);
         message = Plugboard.Operation(message, plugsIndexArray);
-        EnigmaOneOperation funcionamento = new EnigmaOneOperation(reflector, usedRotorOne, usedRotorTwo, usedRotorThree, message, messageRequest.getRotorTwo(), messageRequest.getRotorThree());
+        EnigmaOneOperation funcionamento = new EnigmaOneOperation(reflector, usedRotorOne, usedRotorTwo, usedRotorThree, message, messageRequest.getRotorTwoWheelSet(), messageRequest.getRotorThreeWheelSet());
         message = funcionamento.Operation();
         message = Plugboard.Operation(message, plugsIndexArray);
         messageResponse.setMessage(message);
@@ -213,7 +213,7 @@ public class Encryptor {
         message = message.replace("\r", "");
         message = PrepareMessage.PrepareMessageToEncryptor(message);
         message = Plugboard.Operation(message, plugsIndexArray);
-        EnigmaOneOperation funcionamento = new EnigmaOneOperation(reflector, usedRotorOne, usedRotorTwo, usedRotorThree, message, messageRequest.getRotorTwo(), messageRequest.getRotorThree());
+        EnigmaOneOperation funcionamento = new EnigmaOneOperation(reflector, usedRotorOne, usedRotorTwo, usedRotorThree, message, messageRequest.getRotorTwoWheelSet(), messageRequest.getRotorThreeWheelSet());
         message = funcionamento.Operation();
         message = Plugboard.Operation(message, plugsIndexArray);
         messageResponse.setMessage(message);
@@ -270,7 +270,7 @@ public class Encryptor {
         message = message.replace("\r", "");
         message = PrepareMessage.PrepareMessageToEncryptor(message);
         message = Plugboard.Operation(message, plugsIndexArray);
-        EnigmaM4OperationToFourRotors funcionamento = new EnigmaM4OperationToFourRotors(reflector, message, usedRotorOne, usedRotorTwo, usedRotorThree, usedRotorFour, rotorTwoWheelSet, rotorThreeWheelSet);
+        EnigmaM4OperationToFourRotors funcionamento = new EnigmaM4OperationToFourRotors(reflector, message, usedRotorOne, usedRotorTwo, usedRotorThree, usedRotorFour, rotorTwoWheelSet, rotorThreeWheelSet, rotorFourWheelSet, messageRequest.getReflector());
         message = funcionamento.Operation();
         message = Plugboard.Operation(message, plugsIndexArray);
         messageResponse.setMessage(message);

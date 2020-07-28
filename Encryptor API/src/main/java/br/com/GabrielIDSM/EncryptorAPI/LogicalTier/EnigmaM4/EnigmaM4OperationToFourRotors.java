@@ -5,6 +5,7 @@ import br.com.GabrielIDSM.EncryptorAPI.LogicalTier.PrepareRotors;
 public class EnigmaM4OperationToFourRotors {
 
     private final EnigmaM4Rotors ROTORS = new EnigmaM4Rotors();
+    private final EnigmaM4Reflectors REFLECTORS = new EnigmaM4Reflectors();
     private char[][] reflector;
     private String message;
     private final String Alphabet = ROTORS.DefineUsedRotor(0);
@@ -14,8 +15,10 @@ public class EnigmaM4OperationToFourRotors {
     private String UsedRotorFour;
     private int UsedRotorTwoIndex;
     private int UsedRotorThreeIndex;
+    private int UsedRotorFourIndex;
+    private int reflectorIndex;
 
-    public EnigmaM4OperationToFourRotors(char[][] reflector, String message, String UsedRotorOne, String UsedRotorTwo, String UsedRotorThree, String UsedRotorFour, int UsedRotorTwoIndex, int UsedRotorThreeIndex) {
+    public EnigmaM4OperationToFourRotors(char[][] reflector, String message, String UsedRotorOne, String UsedRotorTwo, String UsedRotorThree, String UsedRotorFour, int UsedRotorTwoIndex, int UsedRotorThreeIndex, int UsedRotorFourIndex, int reflectorIndex) {
         this.reflector = reflector;
         this.message = message;
         this.UsedRotorOne = UsedRotorOne;
@@ -24,6 +27,8 @@ public class EnigmaM4OperationToFourRotors {
         this.UsedRotorFour = UsedRotorFour;
         this.UsedRotorTwoIndex = UsedRotorTwoIndex;
         this.UsedRotorThreeIndex = UsedRotorThreeIndex;
+        this.UsedRotorFourIndex = UsedRotorFourIndex;
+        this.reflectorIndex = reflectorIndex;
     }
 
     public char[][] getReflector() {
@@ -102,16 +107,44 @@ public class EnigmaM4OperationToFourRotors {
         return c;
     }
 
-    private char ReflectorSubstitution(char c, char[][] reflector) {
-        for (int i = 0; i < 13; i++) {
-            if (reflector[i][0] == c) {
-                return reflector[i][1];
+    private char ReflectorSubstitution(char c) {
+        char[][] usedReflector;
+        if (UsedRotorFourIndex == 1 && reflectorIndex == 4) {
+            usedReflector = REFLECTORS.DefineReflector(2);
+            for (int i = 0; i < 13; i++) {
+                if (usedReflector[i][0] == c) {
+                    return usedReflector[i][1];
+                }
+                if (usedReflector[i][1] == c) {
+                    return usedReflector[i][0];
+                }
             }
-            if (reflector[i][1] == c) {
-                return reflector[i][0];
+        } else if (UsedRotorFourIndex == 2 && reflectorIndex == 5) {
+            usedReflector = REFLECTORS.DefineReflector(3);
+            for (int i = 0; i < 13; i++) {
+                if (usedReflector[i][0] == c) {
+                    return usedReflector[i][1];
+                }
+                if (usedReflector[i][1] == c) {
+                    return usedReflector[i][0];
+                }
             }
+        } else {
+            usedReflector = reflector;
+            c = Substitution(c, Alphabet, UsedRotorFour);
+            for (int i = 0; i < 13; i++) {
+                if (usedReflector[i][0] == c) {
+                    c = usedReflector[i][1];
+                    break;
+                }
+                if (usedReflector[i][1] == c) {
+                    c = usedReflector[i][0];
+                    break;
+                }
+            }
+            return Substitution(c, UsedRotorFour, Alphabet);
         }
-        return '_';
+        return ' ';
     }
 
     private void RotateRotors() {
@@ -229,9 +262,7 @@ public class EnigmaM4OperationToFourRotors {
                 Letter = Substitution(messageCharArray[i], Alphabet, UsedRotorOne);
                 Letter = Substitution(Letter, Alphabet, UsedRotorTwo);
                 Letter = Substitution(Letter, Alphabet, UsedRotorThree);
-                Letter = Substitution(Letter, Alphabet, UsedRotorFour);
-                Letter = ReflectorSubstitution(Letter, reflector);
-                Letter = Substitution(Letter, UsedRotorFour, Alphabet);
+                Letter = ReflectorSubstitution(Letter);
                 Letter = Substitution(Letter, UsedRotorThree, Alphabet);
                 Letter = Substitution(Letter, UsedRotorTwo, Alphabet);
                 Letter = Substitution(Letter, UsedRotorOne, Alphabet);
