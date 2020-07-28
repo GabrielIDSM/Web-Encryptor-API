@@ -1,10 +1,14 @@
 package br.com.GabrielIDSM.EncryptorAPI.LogicalTier;
 
-import br.com.GabrielIDSM.EncryptorAPI.LogicalTier.EnigmaOne.EnigmaM3ArmyOperation;
+import br.com.GabrielIDSM.EncryptorAPI.LogicalTier.EnigmaM4.EnigmaM4OperationToFourRotors;
+import br.com.GabrielIDSM.EncryptorAPI.LogicalTier.EnigmaM4.EnigmaM4Reflectors;
+import br.com.GabrielIDSM.EncryptorAPI.LogicalTier.EnigmaM4.EnigmaM4Rotors;
+import br.com.GabrielIDSM.EncryptorAPI.LogicalTier.EnigmaOne.EnigmaOneOperation;
 import br.com.GabrielIDSM.EncryptorAPI.LogicalTier.EnigmaOne.EnigmaOneRotors;
 import br.com.GabrielIDSM.EncryptorAPI.Model.MessageRequestModelToEnigmaM3ArmyWithSixPlugs;
 import br.com.GabrielIDSM.EncryptorAPI.Model.MessageRequestModelToEnigmaM3ArmyWithTenPlugs;
 import br.com.GabrielIDSM.EncryptorAPI.Model.MessageRequestModelToEnigmaM3Naval;
+import br.com.GabrielIDSM.EncryptorAPI.Model.MessageRequestModelToEnigmaM4WithPlugboardAndFourRotors;
 import br.com.GabrielIDSM.EncryptorAPI.Model.MessageRequestModelToEnigmaOne;
 import br.com.GabrielIDSM.EncryptorAPI.Model.MessageResponseModel;
 
@@ -20,8 +24,8 @@ public class Encryptor {
         PrepareRotors Prepare = new PrepareRotors();
         PrepareMessage PrepareMessage = new PrepareMessage();
         int rotorOneWheelSet = messageRequest.getRotorOneWheelSet();
-        int rotorTwoWheelSet = messageRequest.getRotorOneWheelSet();
-        int rotorThreeWheelSet = messageRequest.getRotorOneWheelSet();
+        int rotorTwoWheelSet = messageRequest.getRotorTwoWheelSet();
+        int rotorThreeWheelSet = messageRequest.getRotorThreeWheelSet();
         String usedRotorOne = Rotors.DefineUsedRotor(messageRequest.getRotorOne());
         String usedRotorTwo = Rotors.DefineUsedRotor(messageRequest.getRotorTwo());
         String usedRotorThree = Rotors.DefineUsedRotor(messageRequest.getRotorThree());
@@ -48,7 +52,7 @@ public class Encryptor {
         message = message.replace("\r", "");
         message = PrepareMessage.PrepareMessageToEncryptor(message);
         message = Plugboard.Operation(message, plugsIndexArray);
-        EnigmaM3ArmyOperation funcionamento = new EnigmaM3ArmyOperation(reflector, usedRotorOne, usedRotorTwo, usedRotorThree, message, messageRequest.getRotorTwo(), messageRequest.getRotorThree());
+        EnigmaOneOperation funcionamento = new EnigmaOneOperation(reflector, usedRotorOne, usedRotorTwo, usedRotorThree, message, messageRequest.getRotorTwo(), messageRequest.getRotorThree());
         message = funcionamento.Operation();
         message = Plugboard.Operation(message, plugsIndexArray);
         messageResponse.setMessage(message);
@@ -65,8 +69,8 @@ public class Encryptor {
         PrepareRotors Prepare = new PrepareRotors();
         PrepareMessage PrepareMessage = new PrepareMessage();
         int rotorOneWheelSet = messageRequest.getRotorOneWheelSet();
-        int rotorTwoWheelSet = messageRequest.getRotorOneWheelSet();
-        int rotorThreeWheelSet = messageRequest.getRotorOneWheelSet();
+        int rotorTwoWheelSet = messageRequest.getRotorTwoWheelSet();
+        int rotorThreeWheelSet = messageRequest.getRotorThreeWheelSet();
         String usedRotorOne = Rotors.DefineUsedRotor(messageRequest.getRotorOne());
         String usedRotorTwo = Rotors.DefineUsedRotor(messageRequest.getRotorTwo());
         String usedRotorThree = Rotors.DefineUsedRotor(messageRequest.getRotorThree());
@@ -101,7 +105,7 @@ public class Encryptor {
         message = message.replace("\r", "");
         message = PrepareMessage.PrepareMessageToEncryptor(message);
         message = Plugboard.Operation(message, plugsIndexArray);
-        EnigmaM3ArmyOperation funcionamento = new EnigmaM3ArmyOperation(reflector, usedRotorOne, usedRotorTwo, usedRotorThree, message, messageRequest.getRotorTwo(), messageRequest.getRotorThree());
+        EnigmaOneOperation funcionamento = new EnigmaOneOperation(reflector, usedRotorOne, usedRotorTwo, usedRotorThree, message, messageRequest.getRotorTwo(), messageRequest.getRotorThree());
         message = funcionamento.Operation();
         message = Plugboard.Operation(message, plugsIndexArray);
         messageResponse.setMessage(message);
@@ -118,8 +122,8 @@ public class Encryptor {
         PrepareRotors Prepare = new PrepareRotors();
         PrepareMessage PrepareMessage = new PrepareMessage();
         int rotorOneWheelSet = messageRequest.getRotorOneWheelSet();
-        int rotorTwoWheelSet = messageRequest.getRotorOneWheelSet();
-        int rotorThreeWheelSet = messageRequest.getRotorOneWheelSet();
+        int rotorTwoWheelSet = messageRequest.getRotorTwoWheelSet();
+        int rotorThreeWheelSet = messageRequest.getRotorThreeWheelSet();
         String usedRotorOne = Rotors.DefineUsedRotor(messageRequest.getRotorOne());
         String usedRotorTwo = Rotors.DefineUsedRotor(messageRequest.getRotorTwo());
         String usedRotorThree = Rotors.DefineUsedRotor(messageRequest.getRotorThree());
@@ -154,7 +158,7 @@ public class Encryptor {
         message = message.replace("\r", "");
         message = PrepareMessage.PrepareMessageToEncryptor(message);
         message = Plugboard.Operation(message, plugsIndexArray);
-        EnigmaM3ArmyOperation funcionamento = new EnigmaM3ArmyOperation(reflector, usedRotorOne, usedRotorTwo, usedRotorThree, message, messageRequest.getRotorTwo(), messageRequest.getRotorThree());
+        EnigmaOneOperation funcionamento = new EnigmaOneOperation(reflector, usedRotorOne, usedRotorTwo, usedRotorThree, message, messageRequest.getRotorTwo(), messageRequest.getRotorThree());
         message = funcionamento.Operation();
         message = Plugboard.Operation(message, plugsIndexArray);
         messageResponse.setMessage(message);
@@ -171,8 +175,8 @@ public class Encryptor {
         PrepareRotors Prepare = new PrepareRotors();
         PrepareMessage PrepareMessage = new PrepareMessage();
         int rotorOneWheelSet = messageRequest.getRotorOneWheelSet();
-        int rotorTwoWheelSet = messageRequest.getRotorOneWheelSet();
-        int rotorThreeWheelSet = messageRequest.getRotorOneWheelSet();
+        int rotorTwoWheelSet = messageRequest.getRotorTwoWheelSet();
+        int rotorThreeWheelSet = messageRequest.getRotorThreeWheelSet();
         String usedRotorOne = Rotors.DefineUsedRotor(messageRequest.getRotorOne());
         String usedRotorTwo = Rotors.DefineUsedRotor(messageRequest.getRotorTwo());
         String usedRotorThree = Rotors.DefineUsedRotor(messageRequest.getRotorThree());
@@ -207,7 +211,64 @@ public class Encryptor {
         message = message.replace("\r", "");
         message = PrepareMessage.PrepareMessageToEncryptor(message);
         message = Plugboard.Operation(message, plugsIndexArray);
-        EnigmaM3ArmyOperation funcionamento = new EnigmaM3ArmyOperation(reflector, usedRotorOne, usedRotorTwo, usedRotorThree, message, messageRequest.getRotorTwo(), messageRequest.getRotorThree());
+        EnigmaOneOperation funcionamento = new EnigmaOneOperation(reflector, usedRotorOne, usedRotorTwo, usedRotorThree, message, messageRequest.getRotorTwo(), messageRequest.getRotorThree());
+        message = funcionamento.Operation();
+        message = Plugboard.Operation(message, plugsIndexArray);
+        messageResponse.setMessage(message);
+        return messageResponse;
+    }
+    
+    public static MessageResponseModel EnigmaM4WithPlugboardAndFourRotorsEncryptor(MessageRequestModelToEnigmaM4WithPlugboardAndFourRotors messageRequest){
+        
+        //Preparation to Encryption
+        MessageResponseModel messageResponse = new MessageResponseModel();
+        EnigmaM4Rotors Rotors = new EnigmaM4Rotors();
+        EnigmaM4Reflectors Reflectors = new EnigmaM4Reflectors();
+        int[] plugsIndexArray = new int[20];
+        char[][] reflector = Reflectors.DefineReflector(messageRequest.getReflector());
+        PrepareRotors Prepare = new PrepareRotors();
+        PrepareMessage PrepareMessage = new PrepareMessage();
+        int rotorOneWheelSet = messageRequest.getRotorOneWheelSet();
+        int rotorTwoWheelSet = messageRequest.getRotorTwoWheelSet();
+        int rotorThreeWheelSet = messageRequest.getRotorThreeWheelSet();
+        int rotorFourWheelSet = messageRequest.getRotorFourWheelSet();
+        String usedRotorOne = Rotors.DefineUsedRotor(messageRequest.getRotorOne());
+        String usedRotorTwo = Rotors.DefineUsedRotor(messageRequest.getRotorTwo());
+        String usedRotorThree = Rotors.DefineUsedRotor(messageRequest.getRotorThree());
+        String usedRotorFour = Rotors.DefineExtraRotor(messageRequest.getRotorFour());
+        usedRotorOne = Prepare.PrepareRotorsToEncryptor(usedRotorOne, rotorOneWheelSet);
+        usedRotorTwo = Prepare.PrepareRotorsToEncryptor(usedRotorTwo, rotorTwoWheelSet);
+        usedRotorThree = Prepare.PrepareRotorsToEncryptor(usedRotorThree, rotorThreeWheelSet);
+        usedRotorFour = Prepare.PrepareRotorsToEncryptor(usedRotorFour, rotorFourWheelSet);
+        plugsIndexArray[0] = messageRequest.getPlugOneA();
+        plugsIndexArray[1] = messageRequest.getPlugOneB();
+        plugsIndexArray[2] = messageRequest.getPlugTwoA();
+        plugsIndexArray[3] = messageRequest.getPlugTwoB();
+        plugsIndexArray[4] = messageRequest.getPlugThreeA();
+        plugsIndexArray[5] = messageRequest.getPlugThreeB();
+        plugsIndexArray[6] = messageRequest.getPlugFourA();
+        plugsIndexArray[7] = messageRequest.getPlugFourB();
+        plugsIndexArray[8] = messageRequest.getPlugFiveA();
+        plugsIndexArray[9] = messageRequest.getPlugFiveB();
+        plugsIndexArray[10] = messageRequest.getPlugSixA();
+        plugsIndexArray[11] = messageRequest.getPlugSixB();
+        plugsIndexArray[12] = messageRequest.getPlugSevenA();
+        plugsIndexArray[13] = messageRequest.getPlugSevenB();
+        plugsIndexArray[14] = messageRequest.getPlugEightA();
+        plugsIndexArray[15] = messageRequest.getPlugEightB();
+        plugsIndexArray[16] = messageRequest.getPlugNineA();
+        plugsIndexArray[17] = messageRequest.getPlugNineB();
+        plugsIndexArray[18] = messageRequest.getPlugTenA();
+        plugsIndexArray[19] = messageRequest.getPlugTenB();
+        
+        //Encryption
+        String message = messageRequest.getMessage();
+        message = message.replace("\n", "");
+        message = message.replace("\t", "");
+        message = message.replace("\r", "");
+        message = PrepareMessage.PrepareMessageToEncryptor(message);
+        message = Plugboard.Operation(message, plugsIndexArray);
+        EnigmaM4OperationToFourRotors funcionamento = new EnigmaM4OperationToFourRotors(reflector, usedRotorOne, usedRotorTwo, usedRotorThree, usedRotorFour, message, messageRequest.getRotorTwo(), messageRequest.getRotorThree());
         message = funcionamento.Operation();
         message = Plugboard.Operation(message, plugsIndexArray);
         messageResponse.setMessage(message);

@@ -1,6 +1,6 @@
-package br.com.GabrielIDSM.EncryptorAPI.LogicalTier.EnigmaOne;
+package br.com.GabrielIDSM.EncryptorAPI.LogicalTier.EnigmaM4;
 
-public class EnigmaOneRotors {
+public class EnigmaM4Rotors {
 
     private final String R0 = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     private final String R1 = "EKMFLGDQVZNTOWYHXUSPAIBRCJ";
@@ -11,7 +11,8 @@ public class EnigmaOneRotors {
     private final String R6 = "JPGVOUMFYQBENHZRDKASXLICTW";
     private final String R7 = "NZJHGRCXMYSWBOUFAIVLPEKQDT";
     private final String R8 = "FKQHTLXOCBJSPDZRAMEWNIUYGV";
-    private final char[][] Ref = {{'Y', 'R'}, {'U', 'H'}, {'Q', 'S'}, {'L', 'D'}, {'P', 'X'}, {'N', 'G'}, {'O', 'K'}, {'M', 'I'}, {'E', 'B'}, {'F', 'Z'}, {'C', 'W'}, {'V', 'J'}, {'A', 'T'}};
+    private final String BETA = "LEYJVCNIXWPBQMDRTAKZGFUHOS";
+    private final String GAMA = "FSOKANUERHMBTIYCWLQPZXVGJD";
 
     private String getR0() {
         return R0;
@@ -49,8 +50,12 @@ public class EnigmaOneRotors {
         return R8;
     }
 
-    private char[][] getRef() {
-        return Ref;
+    public String getBETA() {
+        return BETA;
+    }
+
+    public String getGAMA() {
+        return GAMA;
     }
 
     public String DefineUsedRotor(int n) {
@@ -90,8 +95,19 @@ public class EnigmaOneRotors {
         return aux;
     }
 
-    public char[][] DefineReflector() {
-        return getRef();
+    public String DefineExtraRotor(int n) {
+        String aux;
+        switch (n) {
+            case 0:
+                aux = getBETA();
+                break;
+            case 1:
+                aux = getGAMA();
+                break;
+            default:
+                aux = null;
+                break;
+        }
+        return aux;
     }
-
 }

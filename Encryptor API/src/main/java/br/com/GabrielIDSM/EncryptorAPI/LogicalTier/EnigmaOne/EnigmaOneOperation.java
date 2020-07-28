@@ -2,7 +2,7 @@ package br.com.GabrielIDSM.EncryptorAPI.LogicalTier.EnigmaOne;
 
 import br.com.GabrielIDSM.EncryptorAPI.LogicalTier.PrepareRotors;
 
-public final class EnigmaM3ArmyOperation {
+public final class EnigmaOneOperation {
 
     private final EnigmaOneRotors ROTORS = new EnigmaOneRotors();
     private char[][] reflector;
@@ -78,7 +78,7 @@ public final class EnigmaM3ArmyOperation {
         this.UsedRotorThreeIndex = UsedRotorThreeIndex;
     }
 
-    public EnigmaM3ArmyOperation(char[][] reflector, String usedRotorOne, String usedRotorTwo, String usedRotorThree, String message, int usedRotorTwoIndex, int usedRotorThreeIndex) {
+    public EnigmaOneOperation(char[][] reflector, String usedRotorOne, String usedRotorTwo, String usedRotorThree, String message, int usedRotorTwoIndex, int usedRotorThreeIndex) {
         setReflector(reflector);
         setMessage(message);
         setAlphabet(Alphabet);
@@ -155,12 +155,18 @@ public final class EnigmaM3ArmyOperation {
                 }
                 break;
             case 6:
-                if (auxUsedRotorOne[0] == 'K') {
+                if (auxUsedRotorOne[0] == 'A') {
                     setUsedRotorTwo(prepare.PrepareRotorsToEncryptor(UsedRotorTwo, 1));
                     hasRotate = true;
                 }
                 break;
             case 7:
+                if (auxUsedRotorOne[0] == 'A') {
+                    setUsedRotorTwo(prepare.PrepareRotorsToEncryptor(UsedRotorTwo, 1));
+                    hasRotate = true;
+                }
+                break;
+            case 8:
                 if (auxUsedRotorOne[0] == 'A') {
                     setUsedRotorTwo(prepare.PrepareRotorsToEncryptor(UsedRotorTwo, 1));
                     hasRotate = true;
@@ -196,13 +202,18 @@ public final class EnigmaM3ArmyOperation {
                     }
                     break;
                 case 6:
-                    if (auxUsedRotorOne[0] == 'K') {
-                        setUsedRotorTwo(prepare.PrepareRotorsToEncryptor(UsedRotorTwo, 1));
+                    if (auxUsedRotorOne[0] == 'A') {
+                        setUsedRotorThree(prepare.PrepareRotorsToEncryptor(UsedRotorThree, 1));
                     }
                     break;
                 case 7:
                     if (auxUsedRotorOne[0] == 'A') {
-                        setUsedRotorTwo(prepare.PrepareRotorsToEncryptor(UsedRotorTwo, 1));
+                        setUsedRotorThree(prepare.PrepareRotorsToEncryptor(UsedRotorThree, 1));
+                    }
+                    break;
+                case 8:
+                    if (auxUsedRotorOne[0] == 'A') {
+                        setUsedRotorThree(prepare.PrepareRotorsToEncryptor(UsedRotorThree, 1));
                     }
                     break;
             }

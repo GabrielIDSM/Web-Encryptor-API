@@ -1,16 +1,19 @@
-package br.com.GabrielIDSM.EncryptorAPI.LogicalTier.EnigmaOne;
+package br.com.GabrielIDSM.EncryptorAPI.LogicalTier.EnigmaM4;
 
-import br.com.GabrielIDSM.EncryptorAPI.Model.MessageRequestModelToEnigmaM3Naval;
+import br.com.GabrielIDSM.EncryptorAPI.Model.MessageRequestModelToEnigmaM4WithPlugboardAndFourRotors;
 
-public class DataValidationToEnigmaM3Naval {
-    public static boolean isMessageRequestModelValid (MessageRequestModelToEnigmaM3Naval requestModel){
+public class DataValidationToEnigmaM4WithPlugboardAndFourRotors {
+    public static boolean isMessageRequestModelValid (MessageRequestModelToEnigmaM4WithPlugboardAndFourRotors requestModel){
         try{
-            if(requestModel.getRotorOne() < 1 || requestModel.getRotorOne() > 7) return false;
-            if(requestModel.getRotorTwo() < 1 || requestModel.getRotorTwo() > 7) return false;
-            if(requestModel.getRotorThree() < 1 || requestModel.getRotorThree() > 7) return false;
+            if(requestModel.getRotorOne() < 1 || requestModel.getRotorOne() > 8) return false;
+            if(requestModel.getRotorTwo() < 1 || requestModel.getRotorTwo() > 8) return false;
+            if(requestModel.getRotorThree() < 1 || requestModel.getRotorThree() > 8) return false;
+            if(requestModel.getRotorFour() < 1 || requestModel.getRotorFour() > 2) return false;
+            if(requestModel.getReflector() < 4 || requestModel.getReflector() > 5) return false;
             if(requestModel.getRotorOneWheelSet() < 1 || requestModel.getRotorOneWheelSet() > 26) return false;
             if(requestModel.getRotorTwoWheelSet() < 1 || requestModel.getRotorTwoWheelSet() > 26) return false;
             if(requestModel.getRotorThreeWheelSet() < 1 || requestModel.getRotorThreeWheelSet() > 26) return false;
+            if(requestModel.getRotorFourWheelSet() < 1 || requestModel.getRotorFourWheelSet() > 26) return false;
             if(requestModel.getRotorOne() == requestModel.getRotorTwo()
                     || requestModel.getRotorOne() == requestModel.getRotorThree()
                     || requestModel.getRotorTwo() == requestModel.getRotorThree()) return false;
@@ -30,7 +33,7 @@ public class DataValidationToEnigmaM3Naval {
         return true;
     }
     
-    private static int[] createArrayWithPlugLetters(MessageRequestModelToEnigmaM3Naval messageRequest){
+    private static int[] createArrayWithPlugLetters(MessageRequestModelToEnigmaM4WithPlugboardAndFourRotors messageRequest){
         int[] array = new int[20];
         array[0] = messageRequest.getPlugOneA();
         array[1] = messageRequest.getPlugOneB();
