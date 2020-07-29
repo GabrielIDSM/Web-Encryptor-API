@@ -46,6 +46,11 @@ public class DataValidationToEnigmaM4WithPlugboardAndUKWD {
                 }
             }
             int[] reflectorArray = createArrayWithReflector(requestModel);
+            for(int r : reflectorArray){
+                if (r < 0 || r > 23) {
+                    return false;
+                }
+            }
             for (int i = 0; i < reflectorArray.length; i++) {
                 for (int j = 0; j < reflectorArray.length; j++) {
                     if (i == j) {
