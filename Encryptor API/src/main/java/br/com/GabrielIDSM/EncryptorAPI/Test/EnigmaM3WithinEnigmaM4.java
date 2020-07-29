@@ -69,7 +69,7 @@ public class EnigmaM3WithinEnigmaM4 {
         messageRequestToEnigmaM4.setPlugNineB(17);
         messageRequestToEnigmaM4.setPlugTenA(9);
         messageRequestToEnigmaM4.setPlugTenB(16);
-        MessageResponseModel messageResponseModelToEnigmaM4 = Encryptor.EnigmaM4WithPlugboardAndFourRotorsEncryptor(messageRequestToEnigmaM4);
+        MessageResponseModel messageResponseModelToEnigmaM4 = Encryptor.EnigmaM4WithFourRotorsEncryptor(messageRequestToEnigmaM4);
         System.out.println("Mensagem inicial pós Encryptor: " +  messageResponseModelToEnigmaM4.getMessage());
     }
 }
