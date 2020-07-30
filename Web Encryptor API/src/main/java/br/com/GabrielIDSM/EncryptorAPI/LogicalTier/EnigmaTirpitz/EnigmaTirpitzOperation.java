@@ -1,9 +1,9 @@
-package br.com.GabrielIDSM.EncryptorAPI.LogicalTier.EnigmaSwissK;
+package br.com.GabrielIDSM.EncryptorAPI.LogicalTier.EnigmaTirpitz;
 
 import br.com.GabrielIDSM.EncryptorAPI.LogicalTier.EnigmaOne.EnigmaOneRotors;
 import br.com.GabrielIDSM.EncryptorAPI.LogicalTier.PrepareRotors;
 
-public class EnigmaSwissKOperation {
+public class EnigmaTirpitzOperation {
     
     private final EnigmaOneRotors ROTORS = new EnigmaOneRotors();
     private char[][] reflector;
@@ -79,7 +79,7 @@ public class EnigmaSwissKOperation {
         this.UsedRotorThreeIndex = UsedRotorThreeIndex;
     }
 
-    public EnigmaSwissKOperation(char[][] reflector, String message, String UsedRotorOne, String UsedRotorTwo, String UsedRotorThree, int UsedRotorTwoIndex, int UsedRotorThreeIndex) {
+    public EnigmaTirpitzOperation(char[][] reflector, String message, String UsedRotorOne, String UsedRotorTwo, String UsedRotorThree, int UsedRotorTwoIndex, int UsedRotorThreeIndex) {
         this.reflector = reflector;
         this.message = message;
         this.UsedRotorOne = UsedRotorOne;
@@ -125,19 +125,49 @@ public class EnigmaSwissKOperation {
         boolean hasRotate = false;
         switch (UsedRotorTwoIndex) {
             case 1:
-                if (auxUsedRotorOne[0] == 'R') {
+                if (auxUsedRotorOne[0] == 'E' && auxUsedRotorOne[0] == 'H' && auxUsedRotorOne[0] == 'M' && auxUsedRotorOne[0] == 'S' && auxUsedRotorOne[0] == 'Y') {
                     setUsedRotorTwo(prepare.PrepareRotorsToEncryptor(UsedRotorTwo, 1));
                     hasRotate = true;
                 }
                 break;
             case 2:
-                if (auxUsedRotorOne[0] == 'F') {
+                if (auxUsedRotorOne[0] == 'E' && auxUsedRotorOne[0] == 'H' && auxUsedRotorOne[0] == 'N' && auxUsedRotorOne[0] == 'T' && auxUsedRotorOne[0] == 'Z') {
                     setUsedRotorTwo(prepare.PrepareRotorsToEncryptor(UsedRotorTwo, 1));
                     hasRotate = true;
                 }
                 break;
             case 3:
-                if (auxUsedRotorOne[0] == 'W') {
+                if (auxUsedRotorOne[0] == 'E' && auxUsedRotorOne[0] == 'H' && auxUsedRotorOne[0] == 'M' && auxUsedRotorOne[0] == 'S' && auxUsedRotorOne[0] == 'Y') {
+                    setUsedRotorTwo(prepare.PrepareRotorsToEncryptor(UsedRotorTwo, 1));
+                    hasRotate = true;
+                }
+                break;
+            case 4:
+                if (auxUsedRotorOne[0] == 'E' && auxUsedRotorOne[0] == 'H' && auxUsedRotorOne[0] == 'N' && auxUsedRotorOne[0] == 'T' && auxUsedRotorOne[0] == 'Z') {
+                    setUsedRotorTwo(prepare.PrepareRotorsToEncryptor(UsedRotorTwo, 1));
+                    hasRotate = true;
+                }
+                break;
+            case 5:
+                if (auxUsedRotorOne[0] == 'G' && auxUsedRotorOne[0] == 'K' && auxUsedRotorOne[0] == 'N' && auxUsedRotorOne[0] == 'S' && auxUsedRotorOne[0] == 'Z') {
+                    setUsedRotorTwo(prepare.PrepareRotorsToEncryptor(UsedRotorTwo, 1));
+                    hasRotate = true;
+                }
+                break;
+            case 6:
+                if (auxUsedRotorOne[0] == 'F' && auxUsedRotorOne[0] == 'M' && auxUsedRotorOne[0] == 'Q' && auxUsedRotorOne[0] == 'U' && auxUsedRotorOne[0] == 'Y') {
+                    setUsedRotorTwo(prepare.PrepareRotorsToEncryptor(UsedRotorTwo, 1));
+                    hasRotate = true;
+                }
+                break;
+            case 7:
+                if (auxUsedRotorOne[0] == 'G' && auxUsedRotorOne[0] == 'K' && auxUsedRotorOne[0] == 'N' && auxUsedRotorOne[0] == 'S' && auxUsedRotorOne[0] == 'Z') {
+                    setUsedRotorTwo(prepare.PrepareRotorsToEncryptor(UsedRotorTwo, 1));
+                    hasRotate = true;
+                }
+                break;
+            case 8:
+                if (auxUsedRotorOne[0] == 'F' && auxUsedRotorOne[0] == 'M' && auxUsedRotorOne[0] == 'Q' && auxUsedRotorOne[0] == 'U' && auxUsedRotorOne[0] == 'Y') {
                     setUsedRotorTwo(prepare.PrepareRotorsToEncryptor(UsedRotorTwo, 1));
                     hasRotate = true;
                 }
@@ -147,17 +177,42 @@ public class EnigmaSwissKOperation {
             auxUsedRotorTwo = UsedRotorTwo.toCharArray();
             switch (UsedRotorThreeIndex) {
                 case 1:
-                    if (auxUsedRotorTwo[0] == 'R') {
+                    if (auxUsedRotorOne[0] == 'E' && auxUsedRotorOne[0] == 'H' && auxUsedRotorOne[0] == 'M' && auxUsedRotorOne[0] == 'S' && auxUsedRotorOne[0] == 'Y') {
                         setUsedRotorThree(prepare.PrepareRotorsToEncryptor(UsedRotorThree, 1));
                     }
                     break;
                 case 2:
-                    if (auxUsedRotorTwo[0] == 'F') {
+                    if (auxUsedRotorOne[0] == 'E' && auxUsedRotorOne[0] == 'H' && auxUsedRotorOne[0] == 'N' && auxUsedRotorOne[0] == 'T' && auxUsedRotorOne[0] == 'Z') {
                         setUsedRotorThree(prepare.PrepareRotorsToEncryptor(UsedRotorThree, 1));
                     }
                     break;
                 case 3:
-                    if (auxUsedRotorTwo[0] == 'W') {
+                    if (auxUsedRotorOne[0] == 'E' && auxUsedRotorOne[0] == 'H' && auxUsedRotorOne[0] == 'M' && auxUsedRotorOne[0] == 'S' && auxUsedRotorOne[0] == 'Y') {
+                        setUsedRotorThree(prepare.PrepareRotorsToEncryptor(UsedRotorThree, 1));
+                    }
+                    break;
+                case 4:
+                    if (auxUsedRotorOne[0] == 'E' && auxUsedRotorOne[0] == 'H' && auxUsedRotorOne[0] == 'N' && auxUsedRotorOne[0] == 'T' && auxUsedRotorOne[0] == 'Z') {
+                        setUsedRotorThree(prepare.PrepareRotorsToEncryptor(UsedRotorThree, 1));
+                    }
+                    break;
+                case 5:
+                    if (auxUsedRotorOne[0] == 'G' && auxUsedRotorOne[0] == 'K' && auxUsedRotorOne[0] == 'N' && auxUsedRotorOne[0] == 'S' && auxUsedRotorOne[0] == 'Z') {
+                        setUsedRotorThree(prepare.PrepareRotorsToEncryptor(UsedRotorThree, 1));
+                    }
+                    break;
+                case 6:
+                    if (auxUsedRotorOne[0] == 'F' && auxUsedRotorOne[0] == 'M' && auxUsedRotorOne[0] == 'Q' && auxUsedRotorOne[0] == 'U' && auxUsedRotorOne[0] == 'Y') {
+                        setUsedRotorThree(prepare.PrepareRotorsToEncryptor(UsedRotorThree, 1));
+                    }
+                    break;
+                case 7:
+                    if (auxUsedRotorOne[0] == 'G' && auxUsedRotorOne[0] == 'K' && auxUsedRotorOne[0] == 'N' && auxUsedRotorOne[0] == 'S' && auxUsedRotorOne[0] == 'Z') {
+                        setUsedRotorThree(prepare.PrepareRotorsToEncryptor(UsedRotorThree, 1));
+                    }
+                    break;
+                case 8:
+                    if (auxUsedRotorOne[0] == 'F' && auxUsedRotorOne[0] == 'M' && auxUsedRotorOne[0] == 'Q' && auxUsedRotorOne[0] == 'U' && auxUsedRotorOne[0] == 'Y') {
                         setUsedRotorThree(prepare.PrepareRotorsToEncryptor(UsedRotorThree, 1));
                     }
                     break;

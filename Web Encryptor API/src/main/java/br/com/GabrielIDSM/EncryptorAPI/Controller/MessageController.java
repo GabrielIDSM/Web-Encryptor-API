@@ -10,7 +10,9 @@ import br.com.GabrielIDSM.EncryptorAPI.LogicalTier.EnigmaOne.DataValidationToEni
 import br.com.GabrielIDSM.EncryptorAPI.LogicalTier.EnigmaOne.DataValidationToEnigmaM3NavalEightRotorsModel;
 import br.com.GabrielIDSM.EncryptorAPI.LogicalTier.EnigmaOne.DataValidationToEnigmaM3NavalSevenRotorsModel;
 import br.com.GabrielIDSM.EncryptorAPI.LogicalTier.EnigmaOne.DataValidationToEnigmaOne;
+import br.com.GabrielIDSM.EncryptorAPI.LogicalTier.EnigmaRailway.DataValidationToEnigmaRailway;
 import br.com.GabrielIDSM.EncryptorAPI.LogicalTier.EnigmaSwissK.DataValidationToEnigmaSwissK;
+import br.com.GabrielIDSM.EncryptorAPI.LogicalTier.EnigmaTirpitz.DataValidationToEnigmaTirpitz;
 import br.com.GabrielIDSM.EncryptorAPI.Model.MessageRequestModelToEnigmaM3ArmyWithSixPlugs;
 import br.com.GabrielIDSM.EncryptorAPI.Model.MessageRequestModelToEnigmaM3ArmyWithTenPlugs;
 import br.com.GabrielIDSM.EncryptorAPI.Model.MessageRequestModelToEnigmaM3Naval;
@@ -18,7 +20,9 @@ import br.com.GabrielIDSM.EncryptorAPI.Model.MessageRequestModelToEnigmaM4WithPl
 import br.com.GabrielIDSM.EncryptorAPI.Model.MessageRequestModelToEnigmaM4WithPlugboardAndThreeRotors;
 import br.com.GabrielIDSM.EncryptorAPI.Model.MessageRequestModelToEnigmaM4WithPlugboardAndUKWD;
 import br.com.GabrielIDSM.EncryptorAPI.Model.MessageRequestModelToEnigmaOne;
+import br.com.GabrielIDSM.EncryptorAPI.Model.MessageRequestModelToEnigmaRailway;
 import br.com.GabrielIDSM.EncryptorAPI.Model.MessageRequestModelToEnigmaSwissK;
+import br.com.GabrielIDSM.EncryptorAPI.Model.MessageRequestModelToEnigmaTirpitz;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -88,4 +92,17 @@ public class MessageController {
         if(!DataValidationToEnigmaM4WithPlugboardAndUKWD.isMessageRequestModelValid(messageRequest)) throw new ResourceNotFoundException("Invalid Request");
         return new ResponseEntity<>(Encryptor.EnigmaM4WithPlugboardAndUKWDEncryptor(messageRequest), HttpStatus.OK);
     }
+    
+    @PostMapping(path = "enigmarailway")
+    public ResponseEntity<?> EnigmaRailway (@RequestBody MessageRequestModelToEnigmaRailway messageRequest){
+        if(!DataValidationToEnigmaRailway.isMessageRequestModelValid(messageRequest)) throw new ResourceNotFoundException("Invalid Request");
+        return new ResponseEntity<>(Encryptor.EnigmaRailwayEncryptor(messageRequest), HttpStatus.OK);
+    }
+    
+    @PostMapping(path = "enigmatirpitz")
+    public ResponseEntity<?> EnigmaTirpitz (@RequestBody MessageRequestModelToEnigmaTirpitz messageRequest){
+        if(!DataValidationToEnigmaTirpitz.isMessageRequestModelValid(messageRequest)) throw new ResourceNotFoundException("Invalid Request");
+        return new ResponseEntity<>(Encryptor.EnigmaTirpitzEncryptor(messageRequest), HttpStatus.OK);
+    }
+    
 }

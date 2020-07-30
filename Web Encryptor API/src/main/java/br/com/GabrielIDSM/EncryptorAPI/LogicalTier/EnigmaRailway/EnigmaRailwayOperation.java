@@ -1,9 +1,9 @@
-package br.com.GabrielIDSM.EncryptorAPI.LogicalTier.EnigmaSwissK;
+package br.com.GabrielIDSM.EncryptorAPI.LogicalTier.EnigmaRailway;
 
 import br.com.GabrielIDSM.EncryptorAPI.LogicalTier.EnigmaOne.EnigmaOneRotors;
 import br.com.GabrielIDSM.EncryptorAPI.LogicalTier.PrepareRotors;
 
-public class EnigmaSwissKOperation {
+public class EnigmaRailwayOperation {
     
     private final EnigmaOneRotors ROTORS = new EnigmaOneRotors();
     private char[][] reflector;
@@ -79,7 +79,7 @@ public class EnigmaSwissKOperation {
         this.UsedRotorThreeIndex = UsedRotorThreeIndex;
     }
 
-    public EnigmaSwissKOperation(char[][] reflector, String message, String UsedRotorOne, String UsedRotorTwo, String UsedRotorThree, int UsedRotorTwoIndex, int UsedRotorThreeIndex) {
+    public EnigmaRailwayOperation(char[][] reflector, String message, String UsedRotorOne, String UsedRotorTwo, String UsedRotorThree, int UsedRotorTwoIndex, int UsedRotorThreeIndex) {
         this.reflector = reflector;
         this.message = message;
         this.UsedRotorOne = UsedRotorOne;
@@ -125,19 +125,19 @@ public class EnigmaSwissKOperation {
         boolean hasRotate = false;
         switch (UsedRotorTwoIndex) {
             case 1:
-                if (auxUsedRotorOne[0] == 'R') {
+                if (auxUsedRotorOne[0] == 'V') {
                     setUsedRotorTwo(prepare.PrepareRotorsToEncryptor(UsedRotorTwo, 1));
                     hasRotate = true;
                 }
                 break;
             case 2:
-                if (auxUsedRotorOne[0] == 'F') {
+                if (auxUsedRotorOne[0] == 'M') {
                     setUsedRotorTwo(prepare.PrepareRotorsToEncryptor(UsedRotorTwo, 1));
                     hasRotate = true;
                 }
                 break;
             case 3:
-                if (auxUsedRotorOne[0] == 'W') {
+                if (auxUsedRotorOne[0] == 'G') {
                     setUsedRotorTwo(prepare.PrepareRotorsToEncryptor(UsedRotorTwo, 1));
                     hasRotate = true;
                 }
@@ -147,17 +147,17 @@ public class EnigmaSwissKOperation {
             auxUsedRotorTwo = UsedRotorTwo.toCharArray();
             switch (UsedRotorThreeIndex) {
                 case 1:
-                    if (auxUsedRotorTwo[0] == 'R') {
+                    if (auxUsedRotorTwo[0] == 'V') {
                         setUsedRotorThree(prepare.PrepareRotorsToEncryptor(UsedRotorThree, 1));
                     }
                     break;
                 case 2:
-                    if (auxUsedRotorTwo[0] == 'F') {
+                    if (auxUsedRotorTwo[0] == 'M') {
                         setUsedRotorThree(prepare.PrepareRotorsToEncryptor(UsedRotorThree, 1));
                     }
                     break;
                 case 3:
-                    if (auxUsedRotorTwo[0] == 'W') {
+                    if (auxUsedRotorTwo[0] == 'G') {
                         setUsedRotorThree(prepare.PrepareRotorsToEncryptor(UsedRotorThree, 1));
                     }
                     break;
