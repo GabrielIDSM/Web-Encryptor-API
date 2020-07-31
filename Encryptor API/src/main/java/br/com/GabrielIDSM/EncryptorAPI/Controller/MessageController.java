@@ -13,6 +13,7 @@ import br.com.GabrielIDSM.EncryptorAPI.LogicalTier.EnigmaOne.DataValidationToEni
 import br.com.GabrielIDSM.EncryptorAPI.LogicalTier.EnigmaRailway.DataValidationToEnigmaRailway;
 import br.com.GabrielIDSM.EncryptorAPI.LogicalTier.EnigmaSwissK.DataValidationToEnigmaSwissK;
 import br.com.GabrielIDSM.EncryptorAPI.LogicalTier.EnigmaTirpitz.DataValidationToEnigmaTirpitz;
+import br.com.GabrielIDSM.EncryptorAPI.LogicalTier.EnigmaZahlwerk.DataValidationToEnigmaZahlwerk;
 import br.com.GabrielIDSM.EncryptorAPI.Model.MessageRequestModelToEnigmaM3ArmyWithSixPlugs;
 import br.com.GabrielIDSM.EncryptorAPI.Model.MessageRequestModelToEnigmaM3ArmyWithTenPlugs;
 import br.com.GabrielIDSM.EncryptorAPI.Model.MessageRequestModelToEnigmaM3Naval;
@@ -23,6 +24,7 @@ import br.com.GabrielIDSM.EncryptorAPI.Model.MessageRequestModelToEnigmaOne;
 import br.com.GabrielIDSM.EncryptorAPI.Model.MessageRequestModelToEnigmaRailway;
 import br.com.GabrielIDSM.EncryptorAPI.Model.MessageRequestModelToEnigmaSwissK;
 import br.com.GabrielIDSM.EncryptorAPI.Model.MessageRequestModelToEnigmaTirpitz;
+import br.com.GabrielIDSM.EncryptorAPI.Model.MessageRequestModelToEnigmaZahlwerk;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -103,6 +105,24 @@ public class MessageController {
     public ResponseEntity<?> EnigmaTirpitz (@RequestBody MessageRequestModelToEnigmaTirpitz messageRequest){
         if(!DataValidationToEnigmaTirpitz.isMessageRequestModelValid(messageRequest)) throw new ResourceNotFoundException("Invalid Request");
         return new ResponseEntity<>(Encryptor.EnigmaTirpitzEncryptor(messageRequest), HttpStatus.OK);
+    }
+    
+    @PostMapping(path = "enigmazahlwerkdefault")
+    public ResponseEntity<?> EnigmaZahlwerk (@RequestBody MessageRequestModelToEnigmaZahlwerk messageRequest){
+        if(!DataValidationToEnigmaZahlwerk.isMessageRequestModelValid(messageRequest)) throw new ResourceNotFoundException("Invalid Request");
+        return new ResponseEntity<>(Encryptor.EnigmaZahlwerkDefaultEncryptor(messageRequest), HttpStatus.OK);
+    }
+    
+    @PostMapping(path = "enigmazahlwerkg312")
+    public ResponseEntity<?> EnigmaG312 (@RequestBody MessageRequestModelToEnigmaZahlwerk messageRequest){
+        if(!DataValidationToEnigmaZahlwerk.isMessageRequestModelValid(messageRequest)) throw new ResourceNotFoundException("Invalid Request");
+        return new ResponseEntity<>(Encryptor.EnigmaZahlwerkG312Encryptor(messageRequest), HttpStatus.OK);
+    }
+    
+    @PostMapping(path = "enigmazahlwerkg260")
+    public ResponseEntity<?> EnigmaG260 (@RequestBody MessageRequestModelToEnigmaZahlwerk messageRequest){
+        if(!DataValidationToEnigmaZahlwerk.isMessageRequestModelValid(messageRequest)) throw new ResourceNotFoundException("Invalid Request");
+        return new ResponseEntity<>(Encryptor.EnigmaZahlwerkG260Encryptor(messageRequest), HttpStatus.OK);
     }
     
 }

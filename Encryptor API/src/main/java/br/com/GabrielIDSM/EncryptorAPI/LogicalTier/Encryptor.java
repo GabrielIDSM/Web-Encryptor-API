@@ -12,6 +12,8 @@ import br.com.GabrielIDSM.EncryptorAPI.LogicalTier.EnigmaSwissK.EnigmaSwissKOper
 import br.com.GabrielIDSM.EncryptorAPI.LogicalTier.EnigmaSwissK.EnigmaSwissKRotorsAndReflectors;
 import br.com.GabrielIDSM.EncryptorAPI.LogicalTier.EnigmaTirpitz.EnigmaTirpitzOperation;
 import br.com.GabrielIDSM.EncryptorAPI.LogicalTier.EnigmaTirpitz.EnigmaTirpitzRotorsAndReflector;
+import br.com.GabrielIDSM.EncryptorAPI.LogicalTier.EnigmaZahlwerk.EnigmaZahlwerkOperation;
+import br.com.GabrielIDSM.EncryptorAPI.LogicalTier.EnigmaZahlwerk.EnigmaZahlwerkRotorsAndReflectors;
 import br.com.GabrielIDSM.EncryptorAPI.Model.MessageRequestModelToEnigmaM3ArmyWithSixPlugs;
 import br.com.GabrielIDSM.EncryptorAPI.Model.MessageRequestModelToEnigmaM3ArmyWithTenPlugs;
 import br.com.GabrielIDSM.EncryptorAPI.Model.MessageRequestModelToEnigmaM3Naval;
@@ -22,6 +24,7 @@ import br.com.GabrielIDSM.EncryptorAPI.Model.MessageRequestModelToEnigmaOne;
 import br.com.GabrielIDSM.EncryptorAPI.Model.MessageRequestModelToEnigmaRailway;
 import br.com.GabrielIDSM.EncryptorAPI.Model.MessageRequestModelToEnigmaSwissK;
 import br.com.GabrielIDSM.EncryptorAPI.Model.MessageRequestModelToEnigmaTirpitz;
+import br.com.GabrielIDSM.EncryptorAPI.Model.MessageRequestModelToEnigmaZahlwerk;
 import br.com.GabrielIDSM.EncryptorAPI.Model.MessageResponseModel;
 
 public class Encryptor {
@@ -484,6 +487,75 @@ public class Encryptor {
         message = PrepareMessage.PrepareMessageToEncryptor(message);
         EnigmaTirpitzOperation EnigmaTirpitz = new EnigmaTirpitzOperation(reflector, message, usedRotorOne, usedRotorTwo, usedRotorThree, messageRequest.getRotorTwoWheelSet(), messageRequest.getRotorThreeWheelSet());
         messageResponse.setMessage(EnigmaTirpitz.Operation());
+        return messageResponse;
+    }
+    
+    public static MessageResponseModel EnigmaZahlwerkDefaultEncryptor(MessageRequestModelToEnigmaZahlwerk messageRequest){
+        
+        //Preparation to Encryption
+        MessageResponseModel messageResponse = new MessageResponseModel();
+        EnigmaZahlwerkRotorsAndReflectors RotorsAndReflectors = new EnigmaZahlwerkRotorsAndReflectors();
+        PrepareRotors Prepare = new PrepareRotors();
+        PrepareMessage PrepareMessage = new PrepareMessage();
+        char[][] reflector = RotorsAndReflectors.DefineDefaultReflector(messageRequest.getReflectorWheelSet());
+        String usedRotorOne = Prepare.PrepareRotorsToEncryptor(RotorsAndReflectors.DefineDefaultRotors(messageRequest.getRotorOne()), messageRequest.getRotorOneWheelSet());
+        String usedRotorTwo = Prepare.PrepareRotorsToEncryptor(RotorsAndReflectors.DefineDefaultRotors(messageRequest.getRotorTwo()), messageRequest.getRotorTwoWheelSet());
+        String usedRotorThree = Prepare.PrepareRotorsToEncryptor(RotorsAndReflectors.DefineDefaultRotors(messageRequest.getRotorThree()), messageRequest.getRotorThreeWheelSet());
+        
+        //Encryption
+        String message = messageRequest.getMessage();
+        message = message.replace("\n", "");
+        message = message.replace("\t", "");
+        message = message.replace("\r", "");
+        message = PrepareMessage.PrepareMessageToEncryptor(message);
+        EnigmaZahlwerkOperation EnigmaZahlwerk = new EnigmaZahlwerkOperation(reflector, message, usedRotorOne, usedRotorTwo, usedRotorThree, messageRequest.getRotorTwoWheelSet(), messageRequest.getRotorThreeWheelSet());
+        messageResponse.setMessage(EnigmaZahlwerk.Operation());
+        return messageResponse;
+    }
+    
+    public static MessageResponseModel EnigmaZahlwerkG312Encryptor(MessageRequestModelToEnigmaZahlwerk messageRequest){
+        
+        //Preparation to Encryption
+        MessageResponseModel messageResponse = new MessageResponseModel();
+        EnigmaZahlwerkRotorsAndReflectors RotorsAndReflectors = new EnigmaZahlwerkRotorsAndReflectors();
+        PrepareRotors Prepare = new PrepareRotors();
+        PrepareMessage PrepareMessage = new PrepareMessage();
+        char[][] reflector = RotorsAndReflectors.DefineG312Reflector(messageRequest.getReflectorWheelSet());
+        String usedRotorOne = Prepare.PrepareRotorsToEncryptor(RotorsAndReflectors.DefineG312Rotors(messageRequest.getRotorOne()), messageRequest.getRotorOneWheelSet());
+        String usedRotorTwo = Prepare.PrepareRotorsToEncryptor(RotorsAndReflectors.DefineG312Rotors(messageRequest.getRotorTwo()), messageRequest.getRotorTwoWheelSet());
+        String usedRotorThree = Prepare.PrepareRotorsToEncryptor(RotorsAndReflectors.DefineG312Rotors(messageRequest.getRotorThree()), messageRequest.getRotorThreeWheelSet());
+        
+        //Encryption
+        String message = messageRequest.getMessage();
+        message = message.replace("\n", "");
+        message = message.replace("\t", "");
+        message = message.replace("\r", "");
+        message = PrepareMessage.PrepareMessageToEncryptor(message);
+        EnigmaZahlwerkOperation EnigmaZahlwerk = new EnigmaZahlwerkOperation(reflector, message, usedRotorOne, usedRotorTwo, usedRotorThree, messageRequest.getRotorTwoWheelSet(), messageRequest.getRotorThreeWheelSet());
+        messageResponse.setMessage(EnigmaZahlwerk.Operation());
+        return messageResponse;
+    }
+    
+    public static MessageResponseModel EnigmaZahlwerkG260Encryptor(MessageRequestModelToEnigmaZahlwerk messageRequest){
+        
+        //Preparation to Encryption
+        MessageResponseModel messageResponse = new MessageResponseModel();
+        EnigmaZahlwerkRotorsAndReflectors RotorsAndReflectors = new EnigmaZahlwerkRotorsAndReflectors();
+        PrepareRotors Prepare = new PrepareRotors();
+        PrepareMessage PrepareMessage = new PrepareMessage();
+        char[][] reflector = RotorsAndReflectors.DefineG260Reflector(messageRequest.getReflectorWheelSet());
+        String usedRotorOne = Prepare.PrepareRotorsToEncryptor(RotorsAndReflectors.DefineG260Rotors(messageRequest.getRotorOne()), messageRequest.getRotorOneWheelSet());
+        String usedRotorTwo = Prepare.PrepareRotorsToEncryptor(RotorsAndReflectors.DefineG260Rotors(messageRequest.getRotorTwo()), messageRequest.getRotorTwoWheelSet());
+        String usedRotorThree = Prepare.PrepareRotorsToEncryptor(RotorsAndReflectors.DefineG260Rotors(messageRequest.getRotorThree()), messageRequest.getRotorThreeWheelSet());
+        
+        //Encryption
+        String message = messageRequest.getMessage();
+        message = message.replace("\n", "");
+        message = message.replace("\t", "");
+        message = message.replace("\r", "");
+        message = PrepareMessage.PrepareMessageToEncryptor(message);
+        EnigmaZahlwerkOperation EnigmaZahlwerk = new EnigmaZahlwerkOperation(reflector, message, usedRotorOne, usedRotorTwo, usedRotorThree, messageRequest.getRotorTwoWheelSet(), messageRequest.getRotorThreeWheelSet());
+        messageResponse.setMessage(EnigmaZahlwerk.Operation());
         return messageResponse;
     }
     
