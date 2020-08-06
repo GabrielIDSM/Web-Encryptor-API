@@ -1,4 +1,4 @@
-# Web Encryptor SPA (Angular Application)
+# Web Encryptor SPA (Spring Boot Application)
 
 ## Deploy (Heroku)
 
