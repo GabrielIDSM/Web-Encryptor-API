@@ -162,6 +162,7 @@ https://encryptorapi-gabrielidsm.herokuapp.com/
 ```
 {
   "message":[String] message here,
+  "reflector":[Integer] choice from 4 to 5,
   "rotorOne":[Integer] choice from 1 to 8,
   "rotorTwo":[Integer] choice from 1 to 8,
   "rotorThree":[Integer] choice from 1 to 8,
@@ -200,11 +201,9 @@ https://encryptorapi-gabrielidsm.herokuapp.com/
   "rotorOne":[Integer] choice from 1 to 8,
   "rotorTwo":[Integer] choice from 1 to 8,
   "rotorThree":[Integer] choice from 1 to 8,
-  "rotorFour":[Integer] choice 1 or 2,
   "rotorOneWheelSet":[Integer] choice from 1 to 26,
   "rotorTwoWheelSet":[Integer] choice from 1 to 26,
   "rotorThreeWheelSet":[Integer] choice from 1 to 26,
-  "rotorFourWheelSet":[Integer] choice from 1 to 26,
   "plugOneA" : [Integer] choice from 0 to 25,
   "plugOneB" : [Integer] choice from 0 to 25,
   "plugTwoA" : [Integer] choice from 0 to 25,
