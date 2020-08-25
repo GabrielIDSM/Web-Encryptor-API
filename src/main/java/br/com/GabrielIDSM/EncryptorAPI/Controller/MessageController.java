@@ -33,7 +33,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-@CrossOrigin
 @RestController
 @RequestMapping("message")
 public class MessageController {
@@ -79,6 +78,7 @@ public class MessageController {
         return new ResponseEntity<>(Encryptor.EnigmaM4WithThreeRotorsEncryptor(messageRequest), HttpStatus.OK);
     }
     
+    @CrossOrigin
     @PostMapping(path = "enigmaswisskcommercial")
     public ResponseEntity<?> EnigmaSwissKCommercial (@RequestBody MessageRequestModelToEnigmaSwissK messageRequest){
         if(!DataValidationToEnigmaSwissK.isMessageRequestModelValid(messageRequest)) throw new ResourceNotFoundException("Invalid Request");
