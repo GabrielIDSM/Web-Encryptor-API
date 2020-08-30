@@ -47,11 +47,12 @@ public class EnigmaRailwayRotorsAndReflector {
         char[][] reflector = new char[13][2];
         PrepareRotors prepareRotors = new PrepareRotors();
         char[] reflectorCharArray = prepareRotors.PrepareRotorsToEncryptor(reflectorString, n).toCharArray();
+        System.out.println(prepareRotors.PrepareRotorsToEncryptor(reflectorString, n));
         for(int i = 0; i < 13; i++){
             reflector[i][0] = reflectorCharArray[i];
         }
         for(int i = 12; i >= 0; i--){
-            reflector[i][1] = reflectorCharArray[i+13];
+            reflector[i][1] = reflectorCharArray[25-i];
         }
         return reflector;
     }

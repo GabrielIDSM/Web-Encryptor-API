@@ -87,7 +87,7 @@ public class EnigmaSwissKRotorsAndReflectors {
             reflector[i][0] = reflectorCharArray[i];
         }
         for(int i = 12; i >= 0; i--){
-            reflector[i][1] = reflectorCharArray[i+13];
+            reflector[i][1] = reflectorCharArray[25-i];
         }
         return reflector;
     }
