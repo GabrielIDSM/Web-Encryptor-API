@@ -72,8 +72,10 @@ public class EnigmaZahlwerkRotorsAndReflectors {
         PrepareRotors prepareRotors = new PrepareRotors();
         char[] reflectorCharArray = prepareRotors.PrepareRotorsToEncryptor(reflectorString, n).toCharArray();
         for(int i = 0; i < 13; i++){
-            reflector[i][0] = reflectorCharArray[2 * i];
-            reflector[i][1] = reflectorCharArray[2 * i + 1];
+            reflector[i][0] = reflectorCharArray[i];
+        }
+        for(int i = 12; i >= 0; i--){
+            reflector[i][1] = reflectorCharArray[i+13];
         }
         return reflector;
     }
