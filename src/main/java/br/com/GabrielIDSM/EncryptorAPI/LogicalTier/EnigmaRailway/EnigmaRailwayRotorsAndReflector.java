@@ -1,7 +1,6 @@
 package br.com.GabrielIDSM.EncryptorAPI.LogicalTier.EnigmaRailway;
 
 import br.com.GabrielIDSM.EncryptorAPI.LogicalTier.PrepareRotors;
-import java.util.Arrays;
 
 public class EnigmaRailwayRotorsAndReflector {
     

@@ -1,6 +1,6 @@
 package br.com.GabrielIDSM.EncryptorAPI.Test;
 
-import br.com.GabrielIDSM.EncryptorAPI.LogicalTier.Encryptor;
+import br.com.GabrielIDSM.EncryptorAPI.LogicalTier.Encrypter;
 import br.com.GabrielIDSM.EncryptorAPI.Model.MessageRequestModelToEnigmaM3ArmyWithTenPlugs;
 import br.com.GabrielIDSM.EncryptorAPI.Model.MessageRequestModelToEnigmaM4WithPlugboardAndFourRotors;
 import br.com.GabrielIDSM.EncryptorAPI.Model.MessageResponseModel;
@@ -35,7 +35,7 @@ public class EnigmaM3WithinEnigmaM4 {
         messageRequest.setPlugNineB(17);
         messageRequest.setPlugTenA(9);
         messageRequest.setPlugTenB(16);
-        MessageResponseModel messageResponse = Encryptor.EnigmaM3ArmyWithTenPlugsEncryptor(messageRequest);
+        MessageResponseModel messageResponse = Encrypter.EnigmaM3ArmyWithTenPlugsEncrypter(messageRequest);
         System.out.println("Mensagem inicial: " +  messageRequest.getMessage());
         System.out.println("Mensagem pós Encryptor: " +  messageResponse.getMessage());
         MessageRequestModelToEnigmaM4WithPlugboardAndFourRotors messageRequestToEnigmaM4 = new MessageRequestModelToEnigmaM4WithPlugboardAndFourRotors();
@@ -69,7 +69,7 @@ public class EnigmaM3WithinEnigmaM4 {
         messageRequestToEnigmaM4.setPlugNineB(17);
         messageRequestToEnigmaM4.setPlugTenA(9);
         messageRequestToEnigmaM4.setPlugTenB(16);
-        MessageResponseModel messageResponseModelToEnigmaM4 = Encryptor.EnigmaM4WithFourRotorsEncryptor(messageRequestToEnigmaM4);
+        MessageResponseModel messageResponseModelToEnigmaM4 = Encrypter.EnigmaM4WithFourRotorsEncrypter(messageRequestToEnigmaM4);
         System.out.println("Mensagem inicial pós Encryptor: " +  messageResponseModelToEnigmaM4.getMessage());
     }
 }

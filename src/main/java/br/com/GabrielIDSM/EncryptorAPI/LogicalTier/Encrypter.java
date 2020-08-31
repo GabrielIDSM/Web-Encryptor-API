@@ -27,9 +27,9 @@ import br.com.GabrielIDSM.EncryptorAPI.Model.MessageRequestModelToEnigmaTirpitz;
 import br.com.GabrielIDSM.EncryptorAPI.Model.MessageRequestModelToEnigmaZahlwerk;
 import br.com.GabrielIDSM.EncryptorAPI.Model.MessageResponseModel;
 
-public class Encryptor {
+public class Encrypter {
 
-    public static MessageResponseModel EnigmaM3ArmyWithSixPlugsEncryptor(MessageRequestModelToEnigmaM3ArmyWithSixPlugs messageRequest) {
+    public static MessageResponseModel EnigmaM3ArmyWithSixPlugsEncrypter(MessageRequestModelToEnigmaM3ArmyWithSixPlugs messageRequest) {
         
         //Preparation to Encryption
         MessageResponseModel messageResponse = new MessageResponseModel();
@@ -74,7 +74,7 @@ public class Encryptor {
         return messageResponse;
     }
     
-    public static MessageResponseModel EnigmaM3ArmyWithTenPlugsEncryptor(MessageRequestModelToEnigmaM3ArmyWithTenPlugs messageRequest){
+    public static MessageResponseModel EnigmaM3ArmyWithTenPlugsEncrypter(MessageRequestModelToEnigmaM3ArmyWithTenPlugs messageRequest){
         
         //Preparation to Encryption
         MessageResponseModel messageResponse = new MessageResponseModel();
@@ -127,7 +127,7 @@ public class Encryptor {
         return messageResponse;
     }
     
-    public static MessageResponseModel EnigmaM3NavalEncryptor(MessageRequestModelToEnigmaM3Naval messageRequest){
+    public static MessageResponseModel EnigmaM3NavalEncrypter(MessageRequestModelToEnigmaM3Naval messageRequest){
         
         //Preparation to Encryption
         MessageResponseModel messageResponse = new MessageResponseModel();
@@ -180,7 +180,7 @@ public class Encryptor {
         return messageResponse;
     }
     
-    public static MessageResponseModel EnigmaOneEncryptor(MessageRequestModelToEnigmaOne messageRequest){
+    public static MessageResponseModel EnigmaOneEncrypter(MessageRequestModelToEnigmaOne messageRequest){
         
         //Preparation to Encryption
         MessageResponseModel messageResponse = new MessageResponseModel();
@@ -233,7 +233,7 @@ public class Encryptor {
         return messageResponse;
     }
     
-    public static MessageResponseModel EnigmaM4WithFourRotorsEncryptor(MessageRequestModelToEnigmaM4WithPlugboardAndFourRotors messageRequest){
+    public static MessageResponseModel EnigmaM4WithFourRotorsEncrypter(MessageRequestModelToEnigmaM4WithPlugboardAndFourRotors messageRequest){
         
         //Preparation to Encryption
         MessageResponseModel messageResponse = new MessageResponseModel();
@@ -290,7 +290,7 @@ public class Encryptor {
         return messageResponse;
     }
     
-    public static MessageResponseModel EnigmaM4WithThreeRotorsEncryptor(MessageRequestModelToEnigmaM4WithPlugboardAndThreeRotors messageRequest){
+    public static MessageResponseModel EnigmaM4WithThreeRotorsEncrypter(MessageRequestModelToEnigmaM4WithPlugboardAndThreeRotors messageRequest){
         
         //Preparation to Encryption
         MessageResponseModel messageResponse = new MessageResponseModel();
@@ -344,7 +344,7 @@ public class Encryptor {
         return messageResponse;
     }
     
-    public static MessageResponseModel EnigmaSwissKCommercialEncryptor(MessageRequestModelToEnigmaSwissK messageRequest){
+    public static MessageResponseModel EnigmaSwissKCommercialEncrypter(MessageRequestModelToEnigmaSwissK messageRequest){
         
         //Preparation to Encryption
         MessageResponseModel messageResponse = new MessageResponseModel();
@@ -367,7 +367,7 @@ public class Encryptor {
         return messageResponse;
     }
     
-    public static MessageResponseModel EnigmaSwissKAirForceEncryptor(MessageRequestModelToEnigmaSwissK messageRequest){
+    public static MessageResponseModel EnigmaSwissKAirForceEncrypter(MessageRequestModelToEnigmaSwissK messageRequest){
         
         //Preparation to Encryption
         MessageResponseModel messageResponse = new MessageResponseModel();
@@ -390,7 +390,7 @@ public class Encryptor {
         return messageResponse;
     }
     
-    public static MessageResponseModel EnigmaM4WithPlugboardAndUKWDEncryptor(MessageRequestModelToEnigmaM4WithPlugboardAndUKWD messageRequest){
+    public static MessageResponseModel EnigmaM4WithPlugboardAndUKWDEncrypter(MessageRequestModelToEnigmaM4WithPlugboardAndUKWD messageRequest){
         
         //Preparation to Encryption
         MessageResponseModel messageResponse = new MessageResponseModel();
@@ -444,7 +444,7 @@ public class Encryptor {
         return messageResponse;
     }
     
-    public static MessageResponseModel EnigmaRailwayEncryptor(MessageRequestModelToEnigmaRailway messageRequest){
+    public static MessageResponseModel EnigmaRailwayEncrypter(MessageRequestModelToEnigmaRailway messageRequest){
         
         //Preparation to Encryption
         MessageResponseModel messageResponse = new MessageResponseModel();
@@ -467,7 +467,7 @@ public class Encryptor {
         return messageResponse;
     }
     
-    public static MessageResponseModel EnigmaTirpitzEncryptor(MessageRequestModelToEnigmaTirpitz messageRequest){
+    public static MessageResponseModel EnigmaTirpitzEncrypter(MessageRequestModelToEnigmaTirpitz messageRequest){
         
         //Preparation to Encryption
         MessageResponseModel messageResponse = new MessageResponseModel();
@@ -490,7 +490,7 @@ public class Encryptor {
         return messageResponse;
     }
     
-    public static MessageResponseModel EnigmaZahlwerkDefaultEncryptor(MessageRequestModelToEnigmaZahlwerk messageRequest){
+    public static MessageResponseModel EnigmaZahlwerkDefaultEncrypter(MessageRequestModelToEnigmaZahlwerk messageRequest){
         
         //Preparation to Encryption
         MessageResponseModel messageResponse = new MessageResponseModel();
@@ -513,7 +513,7 @@ public class Encryptor {
         return messageResponse;
     }
     
-    public static MessageResponseModel EnigmaZahlwerkG312Encryptor(MessageRequestModelToEnigmaZahlwerk messageRequest){
+    public static MessageResponseModel EnigmaZahlwerkG312Encrypter(MessageRequestModelToEnigmaZahlwerk messageRequest){
         
         //Preparation to Encryption
         MessageResponseModel messageResponse = new MessageResponseModel();
@@ -536,7 +536,7 @@ public class Encryptor {
         return messageResponse;
     }
     
-    public static MessageResponseModel EnigmaZahlwerkG260Encryptor(MessageRequestModelToEnigmaZahlwerk messageRequest){
+    public static MessageResponseModel EnigmaZahlwerkG260Encrypter(MessageRequestModelToEnigmaZahlwerk messageRequest){
         
         //Preparation to Encryption
         MessageResponseModel messageResponse = new MessageResponseModel();

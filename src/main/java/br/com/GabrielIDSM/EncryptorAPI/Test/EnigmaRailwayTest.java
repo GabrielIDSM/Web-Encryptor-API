@@ -1,6 +1,6 @@
 package br.com.GabrielIDSM.EncryptorAPI.Test;
 
-import br.com.GabrielIDSM.EncryptorAPI.LogicalTier.Encryptor;
+import br.com.GabrielIDSM.EncryptorAPI.LogicalTier.Encrypter;
 import br.com.GabrielIDSM.EncryptorAPI.Model.MessageRequestModelToEnigmaRailway;
 import br.com.GabrielIDSM.EncryptorAPI.Model.MessageResponseModel;
 
@@ -18,22 +18,22 @@ public class EnigmaRailwayTest {
 
         for (int i = 0; i < 3; i++) {
             messageRequest.setReflectorWheelSet(i);
-            MessageResponseModel messageResponse = Encryptor.EnigmaRailwayEncryptor(messageRequest);
+            MessageResponseModel messageResponse = Encrypter.EnigmaRailwayEncrypter(messageRequest);
             System.out.println("Mensagem inicial: " + messageRequest.getMessage());
             System.out.println("Mensagem pós Encryptor: " + messageResponse.getMessage());
             messageRequest.setMessage(messageResponse.getMessage());
-            messageResponse = Encryptor.EnigmaRailwayEncryptor(messageRequest);
+            messageResponse = Encrypter.EnigmaRailwayEncrypter(messageRequest);
             System.out.println("Mensagem inicial pós Encryptor: " + messageResponse.getMessage());
             messageRequest.setMessage("Eu amo a Milena mais que prog");
         }
         
         for (int i = 13; i < 16; i++) {
             messageRequest.setReflectorWheelSet(i);
-            MessageResponseModel messageResponse = Encryptor.EnigmaRailwayEncryptor(messageRequest);
+            MessageResponseModel messageResponse = Encrypter.EnigmaRailwayEncrypter(messageRequest);
             System.out.println("Mensagem inicial: " + messageRequest.getMessage());
             System.out.println("Mensagem pós Encryptor: " + messageResponse.getMessage());
             messageRequest.setMessage(messageResponse.getMessage());
-            messageResponse = Encryptor.EnigmaRailwayEncryptor(messageRequest);
+            messageResponse = Encrypter.EnigmaRailwayEncrypter(messageRequest);
             System.out.println("Mensagem inicial pós Encryptor: " + messageResponse.getMessage());
             messageRequest.setMessage("Eu amo a Milena mais que prog");
         }

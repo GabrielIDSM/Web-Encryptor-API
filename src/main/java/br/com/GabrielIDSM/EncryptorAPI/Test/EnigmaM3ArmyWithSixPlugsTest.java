@@ -1,6 +1,6 @@
 package br.com.GabrielIDSM.EncryptorAPI.Test;
 
-import br.com.GabrielIDSM.EncryptorAPI.LogicalTier.Encryptor;
+import br.com.GabrielIDSM.EncryptorAPI.LogicalTier.Encrypter;
 import br.com.GabrielIDSM.EncryptorAPI.Model.MessageRequestModelToEnigmaM3ArmyWithSixPlugs;
 import br.com.GabrielIDSM.EncryptorAPI.Model.MessageResponseModel;
 
@@ -26,11 +26,11 @@ public class EnigmaM3ArmyWithSixPlugsTest {
         messageRequest.setPlugFiveB(21);
         messageRequest.setPlugSixA(5);
         messageRequest.setPlugSixB(20);
-        MessageResponseModel messageResponse = Encryptor.EnigmaM3ArmyWithSixPlugsEncryptor(messageRequest);
+        MessageResponseModel messageResponse = Encrypter.EnigmaM3ArmyWithSixPlugsEncrypter(messageRequest);
         System.out.println("Mensagem inicial: " +  messageRequest.getMessage());
         System.out.println("Mensagem pós Encryptor: " +  messageResponse.getMessage());
         messageRequest.setMessage(messageResponse.getMessage());
-        messageResponse = Encryptor.EnigmaM3ArmyWithSixPlugsEncryptor(messageRequest);
+        messageResponse = Encrypter.EnigmaM3ArmyWithSixPlugsEncrypter(messageRequest);
         System.out.println("Mensagem inicial pós Encryptor: " +  messageResponse.getMessage());
     }
 }

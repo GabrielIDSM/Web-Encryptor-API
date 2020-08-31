@@ -2,7 +2,7 @@ package br.com.GabrielIDSM.EncryptorAPI.Controller;
 
 import br.com.GabrielIDSM.EncryptorAPI.Error.ResourceNotFoundException;
 import br.com.GabrielIDSM.EncryptorAPI.LogicalTier.EnigmaOne.DataValidationToEnigmaM3ArmyWithSixPlugs;
-import br.com.GabrielIDSM.EncryptorAPI.LogicalTier.Encryptor;
+import br.com.GabrielIDSM.EncryptorAPI.LogicalTier.Encrypter;
 import br.com.GabrielIDSM.EncryptorAPI.LogicalTier.EnigmaM4.DataValidationToEnigmaM4WithPlugboardAndFourRotors;
 import br.com.GabrielIDSM.EncryptorAPI.LogicalTier.EnigmaM4.DataValidationToEnigmaM4WithPlugboardAndThreeRotors;
 import br.com.GabrielIDSM.EncryptorAPI.LogicalTier.EnigmaM4.DataValidationToEnigmaM4WithPlugboardAndUKWD;
@@ -40,91 +40,91 @@ public class MessageController {
     @PostMapping(path = "enigmamthreearmywithsixplugs")
     public ResponseEntity<?> EnigmaM3ArmyWithSixPlugs (@RequestBody MessageRequestModelToEnigmaM3ArmyWithSixPlugs messageRequest){
         if(!DataValidationToEnigmaM3ArmyWithSixPlugs.isMessageRequestModelValid(messageRequest)) throw new ResourceNotFoundException("Invalid Request");
-        return new ResponseEntity<>(Encryptor.EnigmaM3ArmyWithSixPlugsEncryptor(messageRequest), HttpStatus.OK);
+        return new ResponseEntity<>(Encrypter.EnigmaM3ArmyWithSixPlugsEncrypter(messageRequest), HttpStatus.OK);
     }
     
     @PostMapping(path = "enigmamthreearmywithtenplugs")
     public ResponseEntity<?> EnigmaM3ArmyWithTenPlugs (@RequestBody MessageRequestModelToEnigmaM3ArmyWithTenPlugs messageRequest){
         if(!DataValidationToEnigmaM3ArmyWithTenPlugs.isMessageRequestModelValid(messageRequest)) throw new ResourceNotFoundException("Invalid Request");
-        return new ResponseEntity<>(Encryptor.EnigmaM3ArmyWithTenPlugsEncryptor(messageRequest), HttpStatus.OK);
+        return new ResponseEntity<>(Encrypter.EnigmaM3ArmyWithTenPlugsEncrypter(messageRequest), HttpStatus.OK);
     }
     
     @PostMapping(path = "enigmamthreenavalsevenrotorsmodel")
     public ResponseEntity<?> EnigmaM3NavalSevenRotorsModel (@RequestBody MessageRequestModelToEnigmaM3Naval messageRequest){
         if(!DataValidationToEnigmaM3NavalSevenRotorsModel.isMessageRequestModelValid(messageRequest)) throw new ResourceNotFoundException("Invalid Request");
-        return new ResponseEntity<>(Encryptor.EnigmaM3NavalEncryptor(messageRequest), HttpStatus.OK);
+        return new ResponseEntity<>(Encrypter.EnigmaM3NavalEncrypter(messageRequest), HttpStatus.OK);
     }
     
     @PostMapping(path = "enigmamthreenavaleightrotorsmodel")
     public ResponseEntity<?> EnigmaM3NavalEightRotorsModel (@RequestBody MessageRequestModelToEnigmaM3Naval messageRequest){
         if(!DataValidationToEnigmaM3NavalEightRotorsModel.isMessageRequestModelValid(messageRequest)) throw new ResourceNotFoundException("Invalid Request");
-        return new ResponseEntity<>(Encryptor.EnigmaM3NavalEncryptor(messageRequest), HttpStatus.OK);
+        return new ResponseEntity<>(Encrypter.EnigmaM3NavalEncrypter(messageRequest), HttpStatus.OK);
     }
     
     @PostMapping(path = "enigmaone")
     public ResponseEntity<?> EnigmaOne (@RequestBody MessageRequestModelToEnigmaOne messageRequest){
         if(!DataValidationToEnigmaOne.isMessageRequestModelValid(messageRequest)) throw new ResourceNotFoundException("Invalid Request");
-        return new ResponseEntity<>(Encryptor.EnigmaOneEncryptor(messageRequest), HttpStatus.OK);
+        return new ResponseEntity<>(Encrypter.EnigmaOneEncrypter(messageRequest), HttpStatus.OK);
     }
     
     @PostMapping(path = "enigmamfourwithplugboardandfourrotors")
     public ResponseEntity<?> EnigmaM4WithPlugboardAndFourRotors (@RequestBody MessageRequestModelToEnigmaM4WithPlugboardAndFourRotors messageRequest){
         if(!DataValidationToEnigmaM4WithPlugboardAndFourRotors.isMessageRequestModelValid(messageRequest)) throw new ResourceNotFoundException("Invalid Request");
-        return new ResponseEntity<>(Encryptor.EnigmaM4WithFourRotorsEncryptor(messageRequest), HttpStatus.OK);
+        return new ResponseEntity<>(Encrypter.EnigmaM4WithFourRotorsEncrypter(messageRequest), HttpStatus.OK);
     }
     
     @PostMapping(path = "enigmamfourwithplugboardandthreerotors")
     public ResponseEntity<?> EnigmaM4WithPlugboardAndThreeRotors (@RequestBody MessageRequestModelToEnigmaM4WithPlugboardAndThreeRotors messageRequest){
         if(!DataValidationToEnigmaM4WithPlugboardAndThreeRotors.isMessageRequestModelValid(messageRequest)) throw new ResourceNotFoundException("Invalid Request");
-        return new ResponseEntity<>(Encryptor.EnigmaM4WithThreeRotorsEncryptor(messageRequest), HttpStatus.OK);
+        return new ResponseEntity<>(Encrypter.EnigmaM4WithThreeRotorsEncrypter(messageRequest), HttpStatus.OK);
     }
     
     @PostMapping(path = "enigmaswisskcommercial")
     public ResponseEntity<?> EnigmaSwissKCommercial (@RequestBody MessageRequestModelToEnigmaSwissK messageRequest){
         if(!DataValidationToEnigmaSwissK.isMessageRequestModelValid(messageRequest)) throw new ResourceNotFoundException("Invalid Request");
-        return new ResponseEntity<>(Encryptor.EnigmaSwissKCommercialEncryptor(messageRequest), HttpStatus.OK);
+        return new ResponseEntity<>(Encrypter.EnigmaSwissKCommercialEncrypter(messageRequest), HttpStatus.OK);
     }
     
     @PostMapping(path = "enigmaswisskairforce")
     public ResponseEntity<?> EnigmaSwissKAirForce (@RequestBody MessageRequestModelToEnigmaSwissK messageRequest){
         if(!DataValidationToEnigmaSwissK.isMessageRequestModelValid(messageRequest)) throw new ResourceNotFoundException("Invalid Request");
-        return new ResponseEntity<>(Encryptor.EnigmaSwissKAirForceEncryptor(messageRequest), HttpStatus.OK);
+        return new ResponseEntity<>(Encrypter.EnigmaSwissKAirForceEncrypter(messageRequest), HttpStatus.OK);
     }
     
     @PostMapping(path = "enigmamfourwithplugboardandukwd")
     public ResponseEntity<?> EnigmaM4WithPlugboardAndUKWD (@RequestBody MessageRequestModelToEnigmaM4WithPlugboardAndUKWD messageRequest){
         if(!DataValidationToEnigmaM4WithPlugboardAndUKWD.isMessageRequestModelValid(messageRequest)) throw new ResourceNotFoundException("Invalid Request");
-        return new ResponseEntity<>(Encryptor.EnigmaM4WithPlugboardAndUKWDEncryptor(messageRequest), HttpStatus.OK);
+        return new ResponseEntity<>(Encrypter.EnigmaM4WithPlugboardAndUKWDEncrypter(messageRequest), HttpStatus.OK);
     }
     
     @PostMapping(path = "enigmarailway")
     public ResponseEntity<?> EnigmaRailway (@RequestBody MessageRequestModelToEnigmaRailway messageRequest){
         if(!DataValidationToEnigmaRailway.isMessageRequestModelValid(messageRequest)) throw new ResourceNotFoundException("Invalid Request");
-        return new ResponseEntity<>(Encryptor.EnigmaRailwayEncryptor(messageRequest), HttpStatus.OK);
+        return new ResponseEntity<>(Encrypter.EnigmaRailwayEncrypter(messageRequest), HttpStatus.OK);
     }
     
     @PostMapping(path = "enigmatirpitz")
     public ResponseEntity<?> EnigmaTirpitz (@RequestBody MessageRequestModelToEnigmaTirpitz messageRequest){
         if(!DataValidationToEnigmaTirpitz.isMessageRequestModelValid(messageRequest)) throw new ResourceNotFoundException("Invalid Request");
-        return new ResponseEntity<>(Encryptor.EnigmaTirpitzEncryptor(messageRequest), HttpStatus.OK);
+        return new ResponseEntity<>(Encrypter.EnigmaTirpitzEncrypter(messageRequest), HttpStatus.OK);
     }
     
     @PostMapping(path = "enigmazahlwerkdefault")
     public ResponseEntity<?> EnigmaZahlwerk (@RequestBody MessageRequestModelToEnigmaZahlwerk messageRequest){
         if(!DataValidationToEnigmaZahlwerk.isMessageRequestModelValid(messageRequest)) throw new ResourceNotFoundException("Invalid Request");
-        return new ResponseEntity<>(Encryptor.EnigmaZahlwerkDefaultEncryptor(messageRequest), HttpStatus.OK);
+        return new ResponseEntity<>(Encrypter.EnigmaZahlwerkDefaultEncrypter(messageRequest), HttpStatus.OK);
     }
     
     @PostMapping(path = "enigmazahlwerkg312")
     public ResponseEntity<?> EnigmaG312 (@RequestBody MessageRequestModelToEnigmaZahlwerk messageRequest){
         if(!DataValidationToEnigmaZahlwerk.isMessageRequestModelValid(messageRequest)) throw new ResourceNotFoundException("Invalid Request");
-        return new ResponseEntity<>(Encryptor.EnigmaZahlwerkG312Encryptor(messageRequest), HttpStatus.OK);
+        return new ResponseEntity<>(Encrypter.EnigmaZahlwerkG312Encrypter(messageRequest), HttpStatus.OK);
     }
     
     @PostMapping(path = "enigmazahlwerkg260")
     public ResponseEntity<?> EnigmaG260 (@RequestBody MessageRequestModelToEnigmaZahlwerk messageRequest){
         if(!DataValidationToEnigmaZahlwerk.isMessageRequestModelValid(messageRequest)) throw new ResourceNotFoundException("Invalid Request");
-        return new ResponseEntity<>(Encryptor.EnigmaZahlwerkG260Encryptor(messageRequest), HttpStatus.OK);
+        return new ResponseEntity<>(Encrypter.EnigmaZahlwerkG260Encrypter(messageRequest), HttpStatus.OK);
     }
     
 }
