@@ -12,8 +12,10 @@ br\com\GabrielIDSM\EncryptorAPI\Model\MessageRequestModelToEnigmaOne.class
 br\com\GabrielIDSM\EncryptorAPI\Model\MessageRequestModelToEnigmaSwissK.class
 br\com\GabrielIDSM\EncryptorAPI\Error\CustomErrorType.class
 br\com\GabrielIDSM\EncryptorAPI\Test\EnigmaM3ArmyWithSixPlugsTest.class
+br\com\GabrielIDSM\EncryptorAPI\LogicalTier\Encrypter.class
 br\com\GabrielIDSM\EncryptorAPI\LogicalTier\PrepareRotors.class
 br\com\GabrielIDSM\EncryptorAPI\Model\MessageRequestModelToEnigmaM3Naval.class
+br\com\GabrielIDSM\EncryptorAPI\Test\EnigmaRailwayTest.class
 br\com\GabrielIDSM\EncryptorAPI\LogicalTier\EnigmaOne\EnigmaOneRotors.class
 br\com\GabrielIDSM\EncryptorAPI\LogicalTier\Plugboard.class
 br\com\GabrielIDSM\EncryptorAPI\Error\GenericErrorDetails$1.class
@@ -34,7 +36,6 @@ br\com\GabrielIDSM\EncryptorAPI\LogicalTier\EnigmaM4\EnigmaM4Rotors.class
 br\com\GabrielIDSM\EncryptorAPI\LogicalTier\EnigmaRailway\EnigmaRailwayOperation.class
 br\com\GabrielIDSM\EncryptorAPI\LogicalTier\EnigmaZahlwerk\EnigmaZahlwerkRotorsAndReflectors.class
 br\com\GabrielIDSM\EncryptorAPI\Model\MessageRequestModelToEnigmaM3ArmyWithSixPlugs.class
-br\com\GabrielIDSM\EncryptorAPI\LogicalTier\Encryptor.class
 br\com\GabrielIDSM\EncryptorAPI\LogicalTier\UKWDRewirableReflector.class
 br\com\GabrielIDSM\EncryptorAPI\LogicalTier\EnigmaM4\DataValidationToEnigmaM4WithPlugboardAndUKWD.class
 br\com\GabrielIDSM\EncryptorAPI\LogicalTier\EnigmaSwissK\EnigmaSwissKOperation.class
